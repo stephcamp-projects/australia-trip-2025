@@ -1,1422 +1,1204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stavrou Family — Australia Trip April 8–19</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🇦🇺 Stavrou Family — Australia 2026</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
-
     :root {
-      --teal:    #0b7c6e;
-      --teal-lt: #e0f5f2;
-      --sand:    #f7f1e8;
-      --gold:    #c9973a;
-      --reef:    #1a7fa8;
-      --forest:  #2d6a4f;
-      --sydney:  #c0392b;
-      --hawaii:  #8e44ad;
-      --text:    #2c2c2c;
-      --muted:   #6b7280;
-      --white:   #ffffff;
+      --navy: #1a3a5c;
+      --ocean: #0077b6;
+      --sky: #48cae4;
+      --sand: #f4e0b4;
+      --coral: #e76f51;
+      --green: #2d6a4f;
+      --light: #f8f9fa;
+      --white: #ffffff;
+      --gray: #6c757d;
+      --border: #dee2e6;
+      --gold: #f4a261;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--sand);
-      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #eef2f7;
+      color: #1a1a2e;
       line-height: 1.6;
     }
 
-    /* ── Hero ── */
+    /* HERO */
     .hero {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #0b7c6e 100%);
-      color: #fff;
+      background: linear-gradient(135deg, #1a3a5c 0%, #0077b6 50%, #48cae4 100%);
+      color: white;
+      padding: 56px 32px 40px;
       text-align: center;
-      padding: 64px 24px 56px;
       position: relative;
       overflow: hidden;
     }
     .hero::before {
       content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='1' fill='rgba(255,255,255,.12)'/%3E%3C/svg%3E");
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
-    .hero .flag { font-size: 2.4rem; margin-bottom: 12px; position: relative; }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3.6rem);
-      letter-spacing: .5px;
-      margin-bottom: 6px;
-      position: relative;
+    .hero-flag { font-size: 64px; margin-bottom: 8px; }
+    .hero h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+    .hero .subtitle { font-size: 1.25rem; opacity: 0.9; margin-bottom: 20px; font-weight: 300; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .pill {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
     }
-    .hero .subtitle {
-      font-size: 1.15rem;
-      opacity: .8;
-      position: relative;
+
+    /* LAYOUT */
+    .container { max-width: 920px; margin: 0 auto; padding: 0 16px 60px; }
+
+    /* SECTION HEADINGS */
+    .section-label {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--gray);
+      margin: 40px 0 14px;
+    }
+    .section-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--white);
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      overflow: hidden;
       margin-bottom: 20px;
     }
-    .hero .dates-badge {
-      display: inline-block;
-      background: rgba(255,255,255,.15);
-      border: 1px solid rgba(255,255,255,.3);
-      border-radius: 999px;
-      padding: 6px 22px;
-      font-size: .92rem;
-      font-weight: 600;
-      letter-spacing: .5px;
-      position: relative;
-    }
-    .hero .legs {
+
+    .card-header {
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid var(--border);
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 24px;
-      position: relative;
-    }
-    .leg-badge {
-      background: rgba(255,255,255,.13);
-      border: 1px solid rgba(255,255,255,.25);
-      border-radius: 8px;
-      padding: 6px 16px;
-      font-size: .82rem;
-      font-weight: 500;
-    }
-
-    /* ── Container ── */
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .main-wrap { padding: 44px 0 16px; }
-
-    /* ── Phase headers ── */
-    .phase-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin: 48px 0 20px;
-    }
-    .phase-icon { font-size: 1.8rem; }
-    .phase-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-    }
-    .phase-title.hawaii  { color: var(--hawaii); }
-    .phase-title.sydney  { color: var(--sydney); }
-    .phase-title.portdoug { color: var(--teal); }
-    .phase-divider {
-      flex: 1;
-      height: 2px;
-      background: var(--teal-lt);
-      border-radius: 2px;
-    }
-
-    /* ── Section title ── */
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: var(--teal);
-      margin: 36px 0 16px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--teal-lt);
-    }
-
-    /* ── Flight cards ── */
-    .flight-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,.07);
-      padding: 18px 22px;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .flight-logo {
-      font-size: 1.6rem;
-      width: 42px;
-      text-align: center;
-      flex-shrink: 0;
-    }
-    .flight-info { flex: 1; min-width: 180px; }
-    .flight-info .airline {
-      font-size: .75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-      color: var(--muted);
-      margin-bottom: 2px;
-    }
-    .flight-info .route {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--text);
-    }
-    .flight-info .times {
-      font-size: .85rem;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-    .flight-chip {
-      background: var(--teal-lt);
-      color: var(--teal);
-      border-radius: 6px;
-      padding: 4px 12px;
-      font-size: .78rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    /* ── Stay / Confirmation cards ── */
-    .info-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,.07);
-      padding: 18px 22px;
-      margin-bottom: 14px;
-      display: flex;
-      gap: 16px;
       align-items: flex-start;
+      gap: 14px;
     }
-    .info-card .ic-icon { font-size: 1.6rem; flex-shrink: 0; }
-    .info-card h4 {
+    .day-badge {
+      background: var(--navy);
+      color: white;
+      border-radius: 10px;
+      padding: 6px 14px;
+      font-size: 0.75rem;
       font-weight: 700;
-      font-size: .97rem;
-      margin-bottom: 3px;
-    }
-    .info-card p { font-size: .87rem; color: var(--muted); }
-    .info-card a { color: var(--reef); font-weight: 500; font-size: .85rem; text-decoration: none; }
-    .info-card a:hover { text-decoration: underline; }
-    .info-card .conf {
-      display: inline-block;
-      background: #fef3c7;
-      color: #92400e;
-      border-radius: 4px;
-      padding: 1px 8px;
-      font-size: .76rem;
-      font-weight: 700;
-      margin-top: 4px;
-    }
-
-    /* ── Day cards ── */
-    .day-card {
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 3px 16px rgba(0,0,0,.08);
-      overflow: hidden;
-      margin-bottom: 28px;
-    }
-    .day-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 18px 26px;
-      color: #fff;
-    }
-    .day-header.hawaii  { background: linear-gradient(90deg, #8e44ad, #6c3483); }
-    .day-header.transit { background: linear-gradient(90deg, #2c3e50, #34495e); }
-    .day-header.sydney  { background: linear-gradient(90deg, #c0392b, #922b21); }
-    .day-header.reef    { background: linear-gradient(90deg, #1a7fa8, #0b7c6e); }
-    .day-header.forest  { background: linear-gradient(90deg, #2d6a4f, #1a7fa8); }
-    .day-header.hike    { background: linear-gradient(90deg, #4d7c0f, #2d6a4f); }
-    .day-header.wildlife{ background: linear-gradient(90deg, #c9973a, #b45309); }
-    .day-header.flyout  { background: linear-gradient(90deg, #2c3e50, #0b7c6e); }
-    .day-header.zoo     { background: linear-gradient(90deg, #16a085, #1a7fa8); }
-    .day-header.opera   { background: linear-gradient(90deg, #c0392b, #8e44ad); }
-
-    .day-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      font-weight: 700;
-      opacity: .35;
-      line-height: 1;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      white-space: nowrap;
       flex-shrink: 0;
     }
-    .day-meta { flex: 1; }
-    .day-meta .day-date {
-      font-size: .76rem;
+    .card-header-text h2 {
+      font-size: 1.2rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-      opacity: .75;
+      color: var(--navy);
       margin-bottom: 2px;
     }
-    .day-meta h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      line-height: 1.2;
+    .card-header-text .location {
+      font-size: 0.85rem;
+      color: var(--gray);
+      display: flex; align-items: center; gap: 4px;
     }
-    .day-meta p { font-size: .82rem; opacity: .8; margin-top: 2px; }
 
-    .day-body { padding: 22px 26px; }
+    .card-body { padding: 20px 24px; }
 
-    /* ── Timeline ── */
-    .timeline { list-style: none; position: relative; }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 10px; top: 6px; bottom: 6px;
-      width: 2px;
-      background: var(--teal-lt);
-    }
+    /* TIMELINE */
+    .timeline { list-style: none; }
     .timeline li {
       display: flex;
-      gap: 18px;
-      padding: 0 0 20px 0;
+      gap: 14px;
+      padding-bottom: 16px;
       position: relative;
     }
-    .timeline li:last-child { padding-bottom: 0; }
-    .tl-dot {
-      width: 22px;
-      height: 22px;
+    .timeline li:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 16px; top: 32px;
+      width: 2px;
+      height: calc(100% - 20px);
+      background: var(--border);
+    }
+    .tl-icon {
+      width: 34px; height: 34px;
       border-radius: 50%;
-      background: var(--teal);
-      border: 3px solid #fff;
-      box-shadow: 0 0 0 2px var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
       flex-shrink: 0;
-      margin-top: 2px;
       z-index: 1;
     }
-    .tl-dot.gold   { background: var(--gold);   box-shadow: 0 0 0 2px var(--gold); }
-    .tl-dot.reef   { background: var(--reef);   box-shadow: 0 0 0 2px var(--reef); }
-    .tl-dot.sydney { background: var(--sydney); box-shadow: 0 0 0 2px var(--sydney); }
-    .tl-dot.hawaii { background: var(--hawaii); box-shadow: 0 0 0 2px var(--hawaii); }
+    .tl-icon.flight  { background: #e3f2fd; }
+    .tl-icon.hotel   { background: #fff3e0; }
+    .tl-icon.food    { background: #fce4ec; }
+    .tl-icon.activity{ background: #e8f5e9; }
+    .tl-icon.car     { background: #f3e5f5; }
+    .tl-icon.ferry   { background: #e0f7fa; }
+    .tl-icon.warning { background: #fff8e1; }
+    .tl-icon.map     { background: #e8eaf6; }
 
-    .tl-time {
-      font-size: .76rem;
-      font-weight: 700;
-      color: var(--muted);
-      min-width: 64px;
-      padding-top: 2px;
-      text-transform: uppercase;
-      letter-spacing: .3px;
-    }
-    .tl-content h4 {
-      font-weight: 600;
-      font-size: .97rem;
-    }
-    .tl-content p {
-      font-size: .86rem;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-    .tl-content a {
-      color: var(--reef);
-      font-weight: 500;
-      font-size: .83rem;
-      text-decoration: none;
-    }
-    .tl-content a:hover { text-decoration: underline; }
-    .tl-tag {
-      display: inline-block;
-      border-radius: 4px;
-      padding: 1px 8px;
-      font-size: .73rem;
-      font-weight: 700;
-      margin-top: 4px;
-      margin-right: 4px;
-    }
-    .tl-tag.confirm { background: #fef3c7; color: #92400e; }
-    .tl-tag.tip     { background: #dcfce7; color: #166534; }
-    .tl-tag.price   { background: #ede9fe; color: #5b21b6; }
-    .tl-tag.optional{ background: #e0f2fe; color: #0369a1; }
-    .tl-tag.alert   { background: #fee2e2; color: #991b1b; }
+    .tl-content { flex: 1; }
+    .tl-time { font-size: 0.75rem; color: var(--gray); font-weight: 600; letter-spacing: 0.5px; }
+    .tl-title { font-size: 0.95rem; font-weight: 600; color: #1a1a2e; margin-bottom: 2px; }
+    .tl-detail { font-size: 0.85rem; color: #555; }
 
-    /* ── Alert / Safety box ── */
-    .alert-box {
-      background: #fff7ed;
-      border-left: 4px solid #f97316;
-      border-radius: 8px;
-      padding: 14px 18px;
-      margin-top: 14px;
-    }
-    .alert-box h5 {
-      font-weight: 700;
-      font-size: .88rem;
-      color: #c2410c;
-      margin-bottom: 6px;
-    }
-    .alert-box ul {
-      list-style: none;
-      font-size: .83rem;
-      color: #7c2d12;
-    }
-    .alert-box ul li::before { content: '⚠️ '; }
-    .alert-box ul li { padding: 2px 0; }
-
-    /* ── Options / choice cards ── */
-    .choice-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 12px;
-    }
-    .choice-card {
-      border: 2px solid var(--teal-lt);
+    /* RESERVATION BOX */
+    .res-box {
+      background: linear-gradient(135deg, #f0f7ff, #e8f4fd);
+      border: 1px solid #bee3f8;
+      border-left: 4px solid var(--ocean);
       border-radius: 10px;
-      padding: 14px 16px;
-      background: #f9fefe;
+      padding: 14px 18px;
+      margin: 10px 0;
     }
-    .choice-card.recommended { border-color: var(--teal); background: #f0fdfa; }
-    .choice-card h5 {
-      font-weight: 700;
-      font-size: .92rem;
-      margin-bottom: 4px;
-      color: var(--teal);
+    .res-box .res-title { font-weight: 700; font-size: 0.92rem; color: var(--navy); margin-bottom: 6px; }
+    .res-box .res-row { display: flex; gap: 6px; font-size: 0.82rem; color: #444; margin-bottom: 3px; }
+    .res-box .res-label { font-weight: 600; min-width: 120px; color: #333; }
+
+    /* ALERT BOXES */
+    .alert {
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: 0.87rem;
     }
-    .choice-card p { font-size: .82rem; color: var(--muted); }
-    .choice-card .price-tag {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--text);
-      margin-top: 6px;
+    .alert-warning {
+      background: #fff8e1;
+      border-left: 4px solid #f9a825;
+      color: #5d4037;
     }
-    .rec-badge {
-      background: var(--teal);
-      color: #fff;
-      font-size: .68rem;
-      font-weight: 700;
-      border-radius: 4px;
-      padding: 1px 6px;
-      vertical-align: middle;
-      margin-left: 6px;
+    .alert-info {
+      background: #e8f5e9;
+      border-left: 4px solid var(--green);
+      color: #1b5e20;
+    }
+    .alert-coral {
+      background: #fff3e0;
+      border-left: 4px solid var(--coral);
+      color: #4e342e;
+    }
+    .alert strong { display: block; margin-bottom: 4px; }
+    .alert ul { padding-left: 16px; margin-top: 6px; }
+    .alert li { margin-bottom: 3px; }
+
+    /* MAP EMBED */
+    .map-wrap {
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 14px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      border: 1px solid var(--border);
+    }
+    .map-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 260px;
+      border: none;
+    }
+    .map-label {
+      background: var(--navy);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      letter-spacing: 0.5px;
     }
 
-    /* ── Activity options ── */
-    .activity-grid {
+    /* MAP BUTTON */
+    .map-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--navy);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin: 4px 4px 4px 0;
+      transition: background 0.2s;
+    }
+    .map-btn:hover { background: var(--ocean); }
+    .map-btn.outline {
+      background: transparent;
+      border: 1px solid var(--navy);
+      color: var(--navy);
+    }
+    .map-btn.outline:hover { background: var(--navy); color: white; }
+
+    /* CHIPS */
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
+    .chip {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #333;
+    }
+    .chip.green { background: #e8f5e9; border-color: #a5d6a7; color: var(--green); }
+    .chip.blue  { background: #e3f2fd; border-color: #90caf9; color: #1565c0; }
+    .chip.red   { background: #fce4ec; border-color: #f48fb1; color: #880e4f; }
+    .chip.gold  { background: #fff8e1; border-color: #ffe082; color: #e65100; }
+
+    /* OVERVIEW TABLE */
+    .overview-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-    .activity-card {
-      background: #fff;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-      padding: 14px 16px;
-      box-shadow: 0 1px 6px rgba(0,0,0,.04);
-    }
-    .activity-card .ac-icon { font-size: 1.4rem; margin-bottom: 6px; }
-    .activity-card h5 { font-weight: 700; font-size: .88rem; margin-bottom: 3px; color: var(--teal); }
-    .activity-card p { font-size: .79rem; color: var(--muted); }
-
-    /* ── Packing list ── */
-    .packing-box {
-      background: var(--teal-lt);
-      border-radius: 10px;
-      padding: 16px 20px;
+      gap: 14px;
       margin-top: 14px;
     }
-    .packing-box h5 {
-      font-weight: 700;
-      font-size: .9rem;
-      color: var(--teal);
-      margin-bottom: 8px;
-    }
-    .packing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 4px 16px;
-    }
-    .packing-grid span {
-      font-size: .82rem;
-      color: var(--forest);
-    }
-    .packing-grid span::before { content: '✓ '; font-weight: 700; }
-
-    /* ── Operators ── */
-    .operators {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 14px;
-      margin-bottom: 40px;
-    }
-    .op-card {
-      background: #fff;
+    .ov-cell {
+      background: var(--white);
       border-radius: 10px;
-      padding: 16px 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
-      border-top: 4px solid var(--teal);
-    }
-    .op-card h4 { font-weight: 700; font-size: .95rem; margin-bottom: 4px; }
-    .op-card p { font-size: .81rem; color: var(--muted); margin-bottom: 8px; }
-    .op-card a {
-      display: inline-block;
-      color: #fff;
-      background: var(--teal);
-      border-radius: 6px;
-      padding: 4px 12px;
-      font-size: .78rem;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .op-card a:hover { background: var(--forest); }
-
-    /* ── Map ── */
-    .map-wrap {
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,.12);
-      margin-bottom: 40px;
-    }
-    .map-wrap iframe { display: block; width: 100%; height: 400px; border: none; }
-    .map-label {
-      font-size: .78rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    /* ── Footer ── */
-    footer {
-      background: #1a1a2e;
-      color: rgba(255,255,255,.6);
+      padding: 16px;
+      border: 1px solid var(--border);
       text-align: center;
-      padding: 22px;
-      font-size: .82rem;
-      margin-top: 20px;
+    }
+    .ov-cell .ov-icon { font-size: 1.8rem; margin-bottom: 6px; }
+    .ov-cell .ov-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-bottom: 4px; }
+    .ov-cell .ov-value { font-size: 0.95rem; font-weight: 600; color: var(--navy); }
+
+    /* FLIGHT CARD */
+    .flight-card {
+      background: linear-gradient(135deg, #1a3a5c, #0077b6);
+      border-radius: 12px;
+      color: white;
+      padding: 16px 20px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .flight-card .fc-airline { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; opacity: 0.8; text-transform: uppercase; }
+    .flight-card .fc-num { font-size: 1.4rem; font-weight: 800; }
+    .flight-card .fc-route {
+      flex: 1;
+      display: flex; align-items: center; gap: 12px;
+      justify-content: center;
+    }
+    .flight-card .fc-city { text-align: center; }
+    .flight-card .fc-code { font-size: 1.6rem; font-weight: 800; }
+    .flight-card .fc-time { font-size: 0.8rem; opacity: 0.85; }
+    .flight-card .fc-arrow { font-size: 1.5rem; opacity: 0.6; }
+    .flight-card .fc-meta { font-size: 0.78rem; opacity: 0.8; }
+
+    /* STAY BOX */
+    .stay-box {
+      background: #fffaf3;
+      border: 1px solid #f0d9a8;
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 10px 0;
+    }
+    .stay-box .stay-title { font-weight: 700; font-size: 0.92rem; color: #5d4037; margin-bottom: 6px; }
+    .stay-box .stay-detail { font-size: 0.84rem; color: #555; margin-bottom: 3px; }
+
+    /* DIVIDER */
+    hr { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 32px 16px;
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    /* PRINT */
+    @media print {
+      body { background: white; }
+      .map-wrap iframe { height: 180px; }
     }
 
     @media (max-width: 600px) {
-      .day-header, .day-body { padding: 14px 16px; }
-      .tl-time { min-width: 52px; }
-      .flight-card { flex-wrap: wrap; }
+      .hero h1 { font-size: 1.8rem; }
+      .flight-card { flex-direction: column; text-align: center; }
+      .flight-card .fc-route { width: 100%; }
     }
+
+    /* Day color accents */
+    .accent-blue   .day-badge { background: #0077b6; }
+    .accent-teal   .day-badge { background: #0a9396; }
+    .accent-coral  .day-badge { background: #e76f51; }
+    .accent-green  .day-badge { background: #2d6a4f; }
+    .accent-purple .day-badge { background: #6d4c8c; }
+    .accent-ocean  .day-badge { background: #023e8a; }
   </style>
 </head>
 <body>
 
-<!-- ══════════ HERO ══════════ -->
+<!-- ═══════════ HERO ═══════════ -->
 <div class="hero">
-  <div class="flag">🇦🇺</div>
-  <h1>Stavrou Family Itinerary</h1>
-  <p class="subtitle">Australia Adventure</p>
-  <div class="dates-badge">April 8 – 19, 2025</div>
-  <div class="legs">
-    <span class="leg-badge">✈️ SEA → HNL Layover</span>
-    <span class="leg-badge">✈️ HNL → SYD</span>
-    <span class="leg-badge">🏄 Bondi Beach, Sydney</span>
-    <span class="leg-badge">✈️ SYD → Cairns</span>
-    <span class="leg-badge">🐠 Great Barrier Reef</span>
-    <span class="leg-badge">🌿 Daintree Rainforest</span>
-    <span class="leg-badge">🦘 Sydney Return</span>
+  <div class="hero-flag">🇦🇺</div>
+  <h1>Stavrou Family</h1>
+  <p class="subtitle">Australia Adventure · April 8–19, 2026</p>
+  <div class="hero-pills">
+    <span class="pill">✈️ Seattle → Honolulu → Sydney</span>
+    <span class="pill">🐠 Great Barrier Reef</span>
+    <span class="pill">🌿 Daintree Rainforest</span>
+    <span class="pill">🦘 Sydney Zoo</span>
+    <span class="pill">🎭 Opera House</span>
   </div>
 </div>
 
-<div class="main-wrap">
 <div class="container">
 
-  <!-- ════════════════════════════════════
-       PHASE 1 — HAWAII LAYOVER
-  ════════════════════════════════════ -->
-  <div class="phase-header">
-    <div class="phase-icon">🌺</div>
-    <div class="phase-title hawaii">Hawaii Layover</div>
-    <div class="phase-divider"></div>
+  <!-- TRIP OVERVIEW -->
+  <div class="section-label">Trip Overview</div>
+  <div class="overview-grid">
+    <div class="ov-cell"><div class="ov-icon">📅</div><div class="ov-label">Dates</div><div class="ov-value">Apr 8–19, 2026</div></div>
+    <div class="ov-cell"><div class="ov-icon">🌏</div><div class="ov-label">Destinations</div><div class="ov-value">HNL · SYD · CNS · Port Douglas</div></div>
+    <div class="ov-cell"><div class="ov-icon">🏠</div><div class="ov-label">Accommodations</div><div class="ov-value">4 stays</div></div>
+    <div class="ov-cell"><div class="ov-icon">✈️</div><div class="ov-label">Flights</div><div class="ov-value">5 segments</div></div>
+    <div class="ov-cell"><div class="ov-icon">🚗</div><div class="ov-label">Rental Car</div><div class="ov-value">Avis SUV · Cairns</div></div>
+    <div class="ov-cell"><div class="ov-icon">🍽️</div><div class="ov-label">Reservations</div><div class="ov-value">6 dining bookings</div></div>
   </div>
 
-  <!-- April 8 -->
-  <div class="day-card">
-    <div class="day-header hawaii">
-      <div class="day-num">08</div>
-      <div class="day-meta">
-        <div class="day-date">Tuesday, April 8</div>
-        <h2>Depart Seattle — Honolulu</h2>
-        <p>First leg begins!</p>
+  <!-- ══════════════════════════════════════════════
+       APR 8 — DEPARTURE
+  ═══════════════════════════════════════════════ -->
+  <div class="section-label">Day 1</div>
+  <div class="card">
+    <div class="card-header">
+      <div class="day-badge">Apr 8 · Tue</div>
+      <div class="card-header-text">
+        <h2>Departure Day — Seattle to Honolulu</h2>
+        <div class="location">📍 Seattle-Tacoma International Airport (SEA)</div>
       </div>
     </div>
-    <div class="day-body">
-      <ul class="timeline">
-        <li>
-          <div class="tl-dot hawaii"></div>
-          <div class="tl-time">5:55 PM</div>
-          <div class="tl-content">
-            <h4>Depart Seattle (SEA)</h4>
-            <p>Alaska Airlines 8027 — arrives Honolulu (HNL) 9:13 PM</p>
-            <span class="tl-tag confirm">AS 8027</span>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot hawaii"></div>
-          <div class="tl-time">9:13 PM</div>
-          <div class="tl-content">
-            <h4>Arrive Honolulu (HNL)</h4>
-            <p>Quick Uber (~5 miles) to hotel. Check in, get some rest — big transpacific flight tomorrow.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot hawaii"></div>
-          <div class="tl-time">Night</div>
-          <div class="tl-content">
-            <h4>Stay: AC Hotel Honolulu</h4>
-            <p>5 miles from HNL airport. 2 connecting rooms.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- April 9 — Transpacific -->
-  <div class="day-card">
-    <div class="day-header transit">
-      <div class="day-num">09</div>
-      <div class="day-meta">
-        <div class="day-date">Wednesday, April 9</div>
-        <h2>Transpacific — Honolulu to Sydney</h2>
-        <p>Crossing the dateline — arrive April 10</p>
+    <div class="card-body">
+      <div class="flight-card">
+        <div>
+          <div class="fc-airline">Alaska Airlines</div>
+          <div class="fc-num">AS 8027</div>
+        </div>
+        <div class="fc-route">
+          <div class="fc-city"><div class="fc-code">SEA</div><div class="fc-time">5:55 PM</div></div>
+          <div class="fc-arrow">✈ ──────</div>
+          <div class="fc-city"><div class="fc-code">HNL</div><div class="fc-time">9:13 PM</div></div>
+        </div>
+        <div class="fc-meta">~5h 18m · Same day</div>
       </div>
-    </div>
-    <div class="day-body">
-      <ul class="timeline">
-        <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">Morning</div>
-          <div class="tl-content">
-            <h4>Breakfast &amp; head to HNL</h4>
-            <p>Depart for airport with plenty of time for an international departure.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">11:50 AM</div>
-          <div class="tl-content">
-            <h4>Depart Honolulu (HNL)</h4>
-            <p>Alaska Airlines 8451 — transpacific to Sydney. Crossing the international date line — you gain a day!</p>
-            <span class="tl-tag confirm">AS 8451</span>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
 
-  <!-- ════════════════════════════════════
-       PHASE 2 — SYDNEY (FIRST LEG)
-  ════════════════════════════════════ -->
-  <div class="phase-header">
-    <div class="phase-icon">🦘</div>
-    <div class="phase-title sydney">Sydney — Bondi Beach</div>
-    <div class="phase-divider"></div>
-  </div>
-
-  <!-- April 10 — Arrive Sydney -->
-  <div class="day-card">
-    <div class="day-header sydney">
-      <div class="day-num">10</div>
-      <div class="day-meta">
-        <div class="day-date">Thursday, April 10</div>
-        <h2>Arrive Sydney — Bondi Beach</h2>
-        <p>Welcome to Australia!</p>
+      <div class="stay-box">
+        <div class="stay-title">🏨 AC Hotel Honolulu</div>
+        <div class="stay-detail">📍 ~5 miles from HNL Airport</div>
+        <div class="stay-detail">🛏️ 2 Connecting Rooms</div>
+        <div class="stay-detail">🌙 One night layover before long-haul to Sydney</div>
       </div>
-    </div>
-    <div class="day-body">
-      <ul class="timeline">
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">6:50 PM</div>
-          <div class="tl-content">
-            <h4>Arrive Sydney (SYD)</h4>
-            <p>Clear customs &amp; immigration. Allow extra time with the family.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">~7:20 PM</div>
-          <div class="tl-content">
-            <h4>Uber to Bondi Beach Airbnb</h4>
-            <p>~28 minute drive from the airport.</p>
-            <p style="margin-top:6px;"><strong>Unit 3 / 80 Campbell Parade, Bondi Beach NSW 2026</strong></p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">Evening</div>
-          <div class="tl-content">
-            <h4>Dinner — easy options after a long flight</h4>
-            <p><strong>Ikaria Bondi</strong> — Greek, open late &bull; <strong>Don Pedros</strong> — Mexican, open late &bull; or UberEats delivery to the Airbnb</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
 
-  <!-- April 11 — Bondi -->
-  <div class="day-card">
-    <div class="day-header sydney">
-      <div class="day-num">11</div>
-      <div class="day-meta">
-        <div class="day-date">Friday, April 11</div>
-        <h2>Bondi Beach Day</h2>
-        <p>Iconic walks, swimming &amp; seaside dining</p>
-      </div>
-    </div>
-    <div class="day-body">
-      <ul class="timeline">
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">Morning</div>
-          <div class="tl-content">
-            <h4>Bondi to Coogee Coastal Walk</h4>
-            <p>One of Sydney's most spectacular walks — 6 km along dramatic sandstone cliffs, secluded coves, rock pools, and ocean baths. Allow 2–3 hours.</p>
-            <span class="tl-tag tip">6 km • Spectacular</span>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">Midday</div>
-          <div class="tl-content">
-            <h4>Swim at Bondi Icebergs Pool</h4>
-            <p>The iconic ocean pool perched on the southern end of Bondi Beach. An absolute must-do for the family.</p>
-            <a href="https://www.icebergs.com.au" target="_blank" rel="noopener">icebergs.com.au &rarr;</a>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">7:00 PM</div>
-          <div class="tl-content">
-            <h4>Dinner</h4>
-            <p><strong>Bondi Icebergs Bistro</strong> — 7 PM reservation &bull; OR <strong>Makaveli Bondi</strong> — reservation required, lively atmosphere overlooking the beach.</p>
-          </div>
-        </li>
-      </ul>
-
-      <div class="map-label" style="margin-top: 20px;">Bondi to Coogee Walk — Sydney</div>
-      <div class="map-wrap" style="margin-bottom:0;">
+      <div class="map-wrap">
+        <div class="map-label">📍 AC Hotel Honolulu — Oahu, Hawaii</div>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13253.5!2d151.2739!3d-33.8908!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae15f63f7253%3A0x2e4ad07e89fcf43f!2sBondi%20Beach%20NSW%202026%2C%20Australia!5e0!3m2!1sen!2sau!4v1710000000001!5m2!1sen!2sau"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Bondi Beach Sydney Map">
+          src="https://maps.google.com/maps?q=AC+Hotel+Honolulu+Hawaii&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <a class="map-btn" href="https://maps.google.com/?q=AC+Hotel+Honolulu+Hawaii" target="_blank">🗺️ Open in Google Maps</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       APR 9–10 — LONG HAUL + ARRIVE SYDNEY
+  ═══════════════════════════════════════════════ -->
+  <div class="section-label">Days 2–3</div>
+  <div class="card">
+    <div class="card-header">
+      <div class="day-badge">Apr 9–10</div>
+      <div class="card-header-text">
+        <h2>Long Haul → Arrive Sydney</h2>
+        <div class="location">✈️ Honolulu → Sydney · ~10 hour flight</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="flight-card">
+        <div>
+          <div class="fc-airline">Alaska Airlines</div>
+          <div class="fc-num">AS 8451</div>
+        </div>
+        <div class="fc-route">
+          <div class="fc-city"><div class="fc-code">HNL</div><div class="fc-time">11:50 AM · Apr 9</div></div>
+          <div class="fc-arrow">✈ ────────────</div>
+          <div class="fc-city"><div class="fc-code">SYD</div><div class="fc-time">6:50 PM · Apr 10</div></div>
+        </div>
+        <div class="fc-meta">Overnight · Crosses international date line</div>
+      </div>
+
+      <ul class="timeline" style="margin-top:16px;">
+        <li>
+          <div class="tl-icon activity">🛬</div>
+          <div class="tl-content">
+            <div class="tl-time">6:50 PM · Apr 10</div>
+            <div class="tl-title">Arrive Sydney Kingsford Smith Airport</div>
+            <div class="tl-detail">Clear customs &amp; immigration. Collect bags.</div>
+          </div>
+        </li>
+        <li>
+          <div class="tl-icon car">🚗</div>
+          <div class="tl-content">
+            <div class="tl-time">~7:30 PM</div>
+            <div class="tl-title">Uber to Bondi Beach Airbnb</div>
+            <div class="tl-detail">~28 minutes from airport</div>
+          </div>
+        </li>
+        <li>
+          <div class="tl-icon hotel">🏠</div>
+          <div class="tl-content">
+            <div class="tl-title">Airbnb — Unit 3 / 80 Campbell Parade</div>
+            <div class="tl-detail">Bondi Beach, NSW 2026, Australia</div>
+          </div>
+        </li>
+        <li>
+          <div class="tl-icon food">🍽️</div>
+          <div class="tl-content">
+            <div class="tl-title">Late Dinner Options</div>
+            <div class="tl-detail">
+              <strong>Ikaria Bondi</strong> — Greek · late hours<br>
+              <strong>Don Pedros</strong> — Mexican · open late<br>
+              <strong>UberEats</strong> — delivered to Airbnb
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="map-wrap">
+        <div class="map-label">📍 Bondi Beach Airbnb — 80 Campbell Parade, Bondi Beach NSW</div>
+        <iframe
+          src="https://maps.google.com/maps?q=80+Campbell+Parade,+Bondi+Beach+NSW+2026&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <a class="map-btn" href="https://maps.google.com/?q=80+Campbell+Parade,+Bondi+Beach+NSW+2026" target="_blank">🗺️ Airbnb Location</a>
+      <a class="map-btn outline" href="https://maps.google.com/?q=Ikaria+Bondi+Beach" target="_blank">🍋 Ikaria Bondi</a>
+      <a class="map-btn outline" href="https://maps.google.com/?q=Don+Pedros+Bondi+Beach" target="_blank">🌮 Don Pedros</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       APR 11 — BONDI BEACH DAY
+  ═══════════════════════════════════════════════ -->
+  <div class="section-label">Day 4</div>
+  <div class="card accent-teal">
+    <div class="card-header">
+      <div class="day-badge">Apr 11 · Fri</div>
+      <div class="card-header-text">
+        <h2>Bondi Beach Day</h2>
+        <div class="location">📍 Bondi Beach, Sydney NSW</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="timeline">
+        <li>
+          <div class="tl-icon activity">🚶</div>
+          <div class="tl-content">
+            <div class="tl-title">Bondi → Coogee Coastal Walk</div>
+            <div class="tl-detail">~6 km · One of Australia's most spectacular coastal walks. Sea cliffs, rock pools, ocean baths. ~2–2.5 hrs leisurely.</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?saddr=Bondi+Beach+NSW&daddr=Coogee+Beach+NSW" target="_blank">🗺️ Walk Route</a>
+          </div>
+        </li>
+        <li>
+          <div class="tl-icon activity">🏊</div>
+          <div class="tl-content">
+            <div class="tl-title">Swim at Bondi Icebergs Pool</div>
+            <div class="tl-detail">Iconic ocean pool perched on the rock shelf at the south end of Bondi Beach.</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Bondi+Icebergs+Pool+Sydney" target="_blank">🗺️ Icebergs Pool</a>
+          </div>
+        </li>
+        <li>
+          <div class="tl-icon food">🍽️</div>
+          <div class="tl-content">
+            <div class="tl-time">7:00 PM</div>
+            <div class="tl-title">Dinner — Bondi Icebergs Bistro <em>OR</em> Makaveli</div>
+            <div class="tl-detail">
+              <strong>Icebergs Bistro</strong> — Reservation at 7pm · Iconic views over Bondi Beach<br>
+              <strong>Makaveli</strong> — Reservation required · Upscale Italian
+            </div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Icebergs+Dining+Room+Bondi+Beach" target="_blank">🗺️ Icebergs Bistro</a>
+            <a class="map-btn outline" style="margin-top:8px;" href="https://maps.google.com/?q=Makaveli+Bondi+Beach" target="_blank">🗺️ Makaveli</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="map-wrap">
+        <div class="map-label">📍 Bondi Beach Area — Coastal Walk Overview</div>
+        <iframe
+          src="https://maps.google.com/maps?q=Bondi+Beach+NSW+Australia&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
     </div>
   </div>
 
-  <!-- ════════════════════════════════════
-       PHASE 3 — PORT DOUGLAS
-  ════════════════════════════════════ -->
-  <div class="phase-header">
-    <div class="phase-icon">🐠</div>
-    <div class="phase-title portdoug">Port Douglas — Tropical North Queensland</div>
-    <div class="phase-divider"></div>
-  </div>
-
-  <!-- Accommodation: Coconut Grove -->
-  <div class="info-card">
-    <div class="ic-icon">🌴</div>
-    <div>
-      <h4>Stay: Coconut Grove — Port Douglas</h4>
-      <p>2 Bedroom apartment. Your tropical base for the reef and rainforest adventures.</p>
-      <span class="conf">Reservation #5609</span> &nbsp;
-      <a href="https://www.coconutgrove.com.au" target="_blank" rel="noopener">coconutgrove.com.au &rarr;</a>
-    </div>
-  </div>
-
-  <!-- Rental Car -->
-  <div class="info-card">
-    <div class="ic-icon">🚗</div>
-    <div>
-      <h4>Rental Car — Avis, Cairns Airport</h4>
-      <p>Intermediate SUV. Scenic 1-hour drive from Cairns Airport north to Port Douglas.</p>
-      <span class="conf">Confirmation 09201279US3</span>
-    </div>
-  </div>
-
-  <!-- April 12 — Fly to Cairns -->
-  <div class="day-card">
-    <div class="day-header flyout">
-      <div class="day-num">12</div>
-      <div class="day-meta">
-        <div class="day-date">Saturday, April 12</div>
-        <h2>Fly Sydney → Cairns → Port Douglas</h2>
-        <p>Depart midday, scenic drive north to paradise</p>
+  <!-- ══════════════════════════════════════════════
+       APR 12 — FLY TO CAIRNS + PORT DOUGLAS
+  ═══════════════════════════════════════════════ -->
+  <div class="section-label">Day 5</div>
+  <div class="card accent-coral">
+    <div class="card-header">
+      <div class="day-badge">Apr 12 · Sat</div>
+      <div class="card-header-text">
+        <h2>Fly to Cairns → Drive to Port Douglas</h2>
+        <div class="location">✈️ SYD → CNS · Then 1 hr scenic drive north</div>
       </div>
     </div>
-    <div class="day-body">
-      <ul class="timeline">
-        <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">Morning</div>
-          <div class="tl-content">
-            <h4>Check out &amp; head to Sydney Airport Terminal 2</h4>
-            <p>Allow time for domestic check-in and security.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">12:40 PM</div>
-          <div class="tl-content">
-            <h4>Depart Sydney (SYD) — Terminal 2</h4>
-            <p>Virgin Australia VA1419 — arrives Cairns 3:55 PM</p>
-            <span class="tl-tag confirm">VA 1419</span>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">3:55 PM</div>
-          <div class="tl-content">
-            <h4>Arrive Cairns — Pick up Avis SUV</h4>
-            <p>Collect rental car at the airport. Confirmation: 09201279US3.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">~5:00 PM</div>
-          <div class="tl-content">
-            <h4>Scenic drive to Port Douglas (~1 hour)</h4>
-            <p>A breathtaking coastal route past Rex Lookout with views over the Coral Sea — one of Australia's most beautiful drives.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot gold"></div>
-          <div class="tl-time">~6:00 PM</div>
-          <div class="tl-content">
-            <h4>Check in — Coconut Grove</h4>
-            <p>Settle in, grab supplies from Coles supermarket (open late), and enjoy your first tropical evening.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- April 13 — Wildlife Habitat -->
-  <div class="day-card">
-    <div class="day-header wildlife">
-      <div class="day-num">13</div>
-      <div class="day-meta">
-        <div class="day-date">Sunday, April 13</div>
-        <h2>Port Douglas — Wildlife Habitat</h2>
-        <p>Koalas, cassowaries, crocs &amp; tropical wildlife</p>
+    <div class="card-body">
+      <div class="flight-card">
+        <div>
+          <div class="fc-airline">Virgin Australia</div>
+          <div class="fc-num">VA 1419</div>
+        </div>
+        <div class="fc-route">
+          <div class="fc-city"><div class="fc-code">SYD</div><div class="fc-time">12:40 PM · Terminal 2</div></div>
+          <div class="fc-arrow">✈ ──────</div>
+          <div class="fc-city"><div class="fc-code">CNS</div><div class="fc-time">3:55 PM</div></div>
+        </div>
+        <div class="fc-meta">~3h 15m · Cairns</div>
       </div>
-    </div>
-    <div class="day-body">
-      <ul class="timeline">
+
+      <div class="res-box">
+        <div class="res-title">🚗 Avis Rental Car — Cairns Airport</div>
+        <div class="res-row"><span class="res-label">Vehicle:</span> Intermediate SUV</div>
+        <div class="res-row"><span class="res-label">Confirmation:</span> 09201279US3</div>
+        <div class="res-row"><span class="res-label">Pick-up:</span> Cairns Airport, Avis desk</div>
+        <div class="res-row"><span class="res-label">Drive:</span> ~1 hour scenic north to Port Douglas via Captain Cook Hwy</div>
+      </div>
+
+      <div class="stay-box">
+        <div class="stay-title">🌴 Coconut Grove — Port Douglas</div>
+        <div class="stay-detail">2 Bedroom · Reservation #5609</div>
+        <div class="stay-detail">📍 Port Douglas, Queensland</div>
+      </div>
+
+      <ul class="timeline" style="margin-top:16px;">
         <li>
-          <div class="tl-dot gold"></div>
-          <div class="tl-time">10:30 AM</div>
+          <div class="tl-icon food">🍽️</div>
           <div class="tl-content">
-            <h4>Wildlife Habitat Port Douglas — Booking confirmed</h4>
-            <p>Meet Australia's most iconic animals in immersive, naturalistic rainforest habitats. Cassowaries, saltwater crocodiles, wallabies, wombats, and over 130 bird species.</p>
-            <p style="margin-top:6px;"><strong>Koala photo for the kids</strong> — included in your booking!</p>
-            <span class="tl-tag confirm">Ref: 16866285</span> &nbsp;
-            <a href="https://www.wildlifehabitat.com.au" target="_blank" rel="noopener">wildlifehabitat.com.au &rarr;</a>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot gold"></div>
-          <div class="tl-time">Afternoon</div>
-          <div class="tl-content">
-            <h4>Explore Port Douglas township</h4>
-            <p>Stroll Macrossan Street, browse the Sunday markets (if running), and dip your toes in Four Mile Beach.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot gold"></div>
-          <div class="tl-time">Evening</div>
-          <div class="tl-content">
-            <h4>Early night — reef day tomorrow!</h4>
-            <p>Dinner near the Coconut Grove. The Reef Hotel or On the Inlet are solid choices. Set alarms — early departure for the reef.</p>
+            <div class="tl-time">7:30 PM</div>
+            <div class="tl-title">Dinner — Bam Pow</div>
+            <div class="tl-detail">Reservation confirmed · Port Douglas</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Bam+Pow+Port+Douglas+Queensland" target="_blank">🗺️ Bam Pow</a>
           </div>
         </li>
       </ul>
 
-      <div style="margin-top:16px; background:#fff7ed; border-left:4px solid var(--gold); border-radius:8px; padding:12px 16px;">
-        <p style="font-size:.85rem; color:#92400e;"><strong>Port Douglas</strong> is the premier gateway to two UNESCO World Heritage Sites — the Great Barrier Reef and the Daintree Rainforest. Activities range from swimming near saltwater crocodiles and white-water rafting to ziplining through ancient forest canopies and drift-floating down tropical rivers.</p>
+      <div class="map-wrap">
+        <div class="map-label">🗺️ Cairns → Port Douglas Scenic Drive (~1 hour)</div>
+        <iframe
+          src="https://maps.google.com/maps?saddr=Cairns+Airport+QLD&daddr=Port+Douglas+QLD&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
+      <a class="map-btn" href="https://maps.google.com/?saddr=Cairns+Airport+QLD&daddr=Port+Douglas+QLD" target="_blank">🗺️ Navigate: Cairns → Port Douglas</a>
     </div>
   </div>
 
-  <!-- April 14 — Great Barrier Reef -->
-  <div class="day-card">
-    <div class="day-header reef">
-      <div class="day-num">14</div>
-      <div class="day-meta">
-        <div class="day-date">Monday, April 14</div>
-        <h2>Great Barrier Reef — Snorkeling Day</h2>
-        <p>Outer reef at Agincourt Ribbon Reefs</p>
+  <!-- ══════════════════════════════════════════════
+       APR 13 — PORT DOUGLAS DAY
+  ═══════════════════════════════════════════════ -->
+  <div class="section-label">Day 6</div>
+  <div class="card accent-green">
+    <div class="card-header">
+      <div class="day-badge">Apr 13 · Sun</div>
+      <div class="card-header-text">
+        <h2>Port Douglas — Wildlife &amp; Adventure</h2>
+        <div class="location">📍 Port Douglas, Queensland — Gateway to Reef &amp; Rainforest</div>
       </div>
     </div>
-    <div class="day-body">
+    <div class="card-body">
+
+      <div class="alert alert-info">
+        <strong>🌟 About Port Douglas</strong>
+        The premier gateway to two UNESCO World Heritage Sites: the <strong>Great Barrier Reef</strong> and the <strong>Daintree Rainforest</strong>. Activities include swimming with saltwater crocodiles, white-water rafting, ziplining through ancient forest canopies, and drift-floating down tropical rivers.
+      </div>
+
       <ul class="timeline">
         <li>
-          <div class="tl-dot reef"></div>
-          <div class="tl-time">7:45 AM</div>
+          <div class="tl-icon activity">🐨</div>
           <div class="tl-content">
-            <h4>Walk to Crystalbrook Superyacht Marina (~10 min)</h4>
-            <p>44 Wharf St, Port Douglas. Arrive early to get gear fitted and briefed.</p>
+            <div class="tl-time">10:30 AM</div>
+            <div class="tl-title">Wildlife Habitat — Koala Photo for Kids!</div>
+            <div class="tl-detail">Booking confirmed · Reference #16866285</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Wildlife+Habitat+Port+Douglas+QLD" target="_blank">🗺️ Wildlife Habitat</a>
           </div>
         </li>
         <li>
-          <div class="tl-dot reef"></div>
-          <div class="tl-time">8:00 AM</div>
+          <div class="tl-icon food">🍽️</div>
           <div class="tl-content">
-            <h4>Reef Day Departs</h4>
-            <p>Choose your operator below. Full day snorkeling at up to 3 outer reef sites. Gear, lunch, and guided snorkel included.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot reef"></div>
-          <div class="tl-time">~4:00 PM</div>
-          <div class="tl-content">
-            <h4>Return to marina</h4>
-            <p>Salty, sun-kissed and full of stories. Relax evening — early hike the next day.</p>
+            <div class="tl-time">7:00 PM</div>
+            <div class="tl-title">Dinner — Salsa Bar &amp; Grill</div>
+            <div class="tl-detail">Reservation confirmed · Deposit $50 paid<br>
+            <a href="http://www.salsaportdouglas.com.au" target="_blank" style="color: var(--ocean);">salsaportdouglas.com.au</a></div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Salsa+Bar+and+Grill+Port+Douglas" target="_blank">🗺️ Salsa Bar &amp; Grill</a>
           </div>
         </li>
       </ul>
 
-      <div style="margin-top:18px;">
-        <p style="font-size:.84rem; font-weight:700; color:var(--teal); margin-bottom:10px; text-transform:uppercase; letter-spacing:.4px;">Choose Your Reef Operator</p>
-        <div class="choice-grid">
-          <div class="choice-card recommended">
-            <h5>Wavelength Reef Cruises <span class="rec-badge">Suggested</span></h5>
-            <p>Small-group (max 30) with an on-board marine biologist. Three outer reef sites at Agincourt Ribbons. Wetsuit, gear, and lunch included.</p>
-            <div class="price-tag">$763 family</div>
-            <a href="https://www.wavelength.com.au" target="_blank" rel="noopener" style="display:inline-block; margin-top:8px; color:var(--reef); font-size:.82rem;">wavelength.com.au &rarr;</a>
-          </div>
-          <div class="choice-card">
-            <h5>Calypso Reef Cruises</h5>
-            <p>Larger vessel, multiple reef sites, family-friendly. Good option if Wavelength is sold out.</p>
-            <div class="price-tag">$877 family</div>
-            <a href="https://www.calypsoreef.com.au" target="_blank" rel="noopener" style="display:inline-block; margin-top:8px; color:var(--reef); font-size:.82rem;">calypsoreef.com.au &rarr;</a>
-          </div>
-        </div>
+      <div class="chips">
+        <span class="chip green">🐊 Saltwater Crocs nearby</span>
+        <span class="chip blue">🏄 World-class reef access</span>
+        <span class="chip green">🌿 Ancient rainforest</span>
+        <span class="chip gold">🤿 Snorkeling tomorrow!</span>
       </div>
 
-      <div class="packing-box" style="margin-top:18px;">
-        <h5>🎒 Reef Day Packing List</h5>
-        <div class="packing-grid">
-          <span>Reef-safe sunscreen</span>
-          <span>Rash vest / swim shirt</span>
-          <span>Hat &amp; sunglasses</span>
-          <span>Towel</span>
-          <span>Change of clothes</span>
-          <span>Water bottle</span>
-          <span>Motion sickness tabs</span>
-          <span>Waterproof camera</span>
-          <span>Cash for extras</span>
-          <span>Dry bag</span>
-        </div>
+      <div class="map-wrap">
+        <div class="map-label">📍 Port Douglas Town Area</div>
+        <iframe
+          src="https://maps.google.com/maps?q=Port+Douglas+Queensland+Australia&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
   </div>
 
-  <!-- April 15 — Hiking Day -->
-  <div class="day-card">
-    <div class="day-header hike">
-      <div class="day-num">15</div>
-      <div class="day-meta">
-        <div class="day-date">Tuesday, April 15</div>
-        <h2>Hiking Day</h2>
-        <p>Headlands, rainforest &amp; optional adventures</p>
+  <!-- ══════════════════════════════════════════════
+       APR 14 — GREAT BARRIER REEF
+  ═══════════════════════════════════════════════ -->
+  <div class="section-label">Day 7</div>
+  <div class="card accent-ocean">
+    <div class="card-header">
+      <div class="day-badge">Apr 14 · Mon</div>
+      <div class="card-header-text">
+        <h2>🐠 Great Barrier Reef Snorkel Day</h2>
+        <div class="location">📍 Wavelength Reef Tours · Crystalbrook Superyacht Marina</div>
       </div>
     </div>
-    <div class="day-body">
+    <div class="card-body">
+
+      <div class="res-box">
+        <div class="res-title">⚓ Wavelength Reef Tours — Check-In Details</div>
+        <div class="res-row"><span class="res-label">Date:</span> Monday, April 14</div>
+        <div class="res-row"><span class="res-label">Check-in Time:</span> <strong>8:10 AM ON BOARD</strong></div>
+        <div class="res-row"><span class="res-label">Guests:</span> 4</div>
+        <div class="res-row"><span class="res-label">Marina:</span> Crystalbrook Superyacht Marina</div>
+        <div class="res-row"><span class="res-label">Address:</span> 44 Wharf St, Port Douglas</div>
+        <div class="res-row"><span class="res-label">Directions:</span> Follow the boardwalk in front of restaurant <strong>Lure</strong> → <strong>Berth C10/C11</strong></div>
+        <div class="res-row"><span class="res-label">Vessel:</span> Blue &amp; white with WAVELENGTH on the side</div>
+        <div class="res-row"><span class="res-label">Return:</span> ~4:00 PM</div>
+      </div>
+
       <ul class="timeline">
         <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">6:30 AM</div>
+          <div class="tl-icon activity">🚶</div>
           <div class="tl-content">
-            <h4>Flagstaff Hill / Four Mile Headland Walk</h4>
-            <p>Start early before the heat. Short drive or walk from Coconut Grove.</p>
-            <p style="margin-top:5px;"><strong>Distance:</strong> 3 km (extendable) &bull; <strong>Difficulty:</strong> Moderate — steep uphill sections, mostly clear footing<br><strong>Highlights:</strong> Panoramic views of Four Mile Beach and Coral Sea. Good mix of forested trail and open headlands. Very safe; open trail with low snake risk.</p>
-            <span class="tl-tag tip">3 km • Moderate • Panoramic views</span>
+            <div class="tl-time">8:00 AM</div>
+            <div class="tl-title">Walk to Crystalbrook Marina</div>
+            <div class="tl-detail">~10 minute walk from town · Arrive before 8:10 AM</div>
           </div>
         </li>
         <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">Morning</div>
+          <div class="tl-icon activity">🤿</div>
           <div class="tl-content">
-            <h4>Breakfast &amp; rest time</h4>
-            <p>Refuel at a Macrossan Street cafe — Zinc or Mango Jam are local favourites.</p>
+            <div class="tl-time">8:10 AM — 4:00 PM</div>
+            <div class="tl-title">Full Day Great Barrier Reef Snorkeling</div>
+            <div class="tl-detail">Multiple reef sites · Equipment provided · Lunch on board</div>
           </div>
         </li>
         <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">Afternoon</div>
+          <div class="tl-icon food">🍽️</div>
           <div class="tl-content">
-            <h4>Optional Activity — Pick One:</h4>
+            <div class="tl-title">Dinner — Babel Port Douglas</div>
+            <div class="tl-detail">Reservation details TBC</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Babel+Port+Douglas+Restaurant" target="_blank">🗺️ Babel Restaurant</a>
           </div>
         </li>
       </ul>
 
-      <div class="activity-grid">
-        <div class="activity-card">
-          <div class="ac-icon">🏊</div>
-          <h5>River Drift Snorkeling</h5>
-          <p>Float &amp; snorkel down the crystal-clear Mossman River through the rainforest. Unique &amp; memorable for kids.</p>
-        </div>
-        <div class="activity-card">
-          <div class="ac-icon">🌿</div>
-          <h5>Ziplining — Cape Tribulation</h5>
-          <p>Treetop Adventures — soar up to 15 m above ground through the world's oldest rainforest canopy.</p>
-          <a href="https://www.treetopsadventure.com.au" target="_blank" rel="noopener" style="font-size:.78rem; color:var(--reef);">treetopsadventure.com.au &rarr;</a>
-        </div>
-        <div class="activity-card">
-          <div class="ac-icon">🚣</div>
-          <h5>White-Water Rafting</h5>
-          <p>Half-day trips on the Barron River — Grade 2–3 rapids through rugged rainforest ravines. Thrilling for older kids.</p>
-        </div>
-        <div class="activity-card">
-          <div class="ac-icon">🚙</div>
-          <h5>4WD Off-Road Tour</h5>
-          <p>Deep Daintree 4WD tours including ATV rides across creeks and hills on private properties.</p>
-        </div>
-      </div>
-
-      <div class="alert-box" style="margin-top:18px;">
-        <h5>⚠️ Safety Tips for Hiking Port Douglas</h5>
+      <div class="alert alert-coral">
+        <strong>📦 Reef Day Packing List</strong>
         <ul>
-          <li>Wear closed shoes and long socks/pants to prevent snake bites — poisonous snakes can be aggressive here</li>
-          <li>Stick to well-marked trails only</li>
-          <li>Carry water, insect repellent &amp; sunscreen at all times</li>
-          <li>Avoid hiking at dawn/dusk when snakes are most active</li>
-          <li>Check for recent trail conditions at visitor centres or local park websites before heading out</li>
+          <li>Reef-safe sunscreen (mandatory on the reef)</li>
+          <li>Rashguard / swimsuit</li>
+          <li>Towel</li>
+          <li>Water bottle</li>
+          <li>Cash or card for onboard extras</li>
+          <li>Motion sickness tabs if needed</li>
+          <li>Underwater camera / GoPro</li>
+        </ul>
+      </div>
+
+      <div class="map-wrap">
+        <div class="map-label">📍 44 Wharf St, Port Douglas — Crystalbrook Superyacht Marina</div>
+        <iframe
+          src="https://maps.google.com/maps?q=44+Wharf+Street+Port+Douglas+QLD&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <a class="map-btn" href="https://maps.google.com/?q=Crystalbrook+Superyacht+Marina+44+Wharf+St+Port+Douglas" target="_blank">🗺️ Navigate to Marina</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       APR 15 — HIKING + CULTURAL TOUR
+  ═══════════════════════════════════════════════ -->
+  <div class="section-label">Day 8</div>
+  <div class="card accent-green">
+    <div class="card-header">
+      <div class="day-badge">Apr 15 · Tue</div>
+      <div class="card-header-text">
+        <h2>Hiking &amp; Indigenous Cultural Tour</h2>
+        <div class="location">📍 Port Douglas — Flagstaff Hill + Ngana Julaymba Dungay</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="timeline">
+        <li>
+          <div class="tl-icon activity">⛰️</div>
+          <div class="tl-content">
+            <div class="tl-title">Flagstaff Hill / Four Mile Headland Walk</div>
+            <div class="tl-detail">
+              <strong>Distance:</strong> 3 km (extendable)<br>
+              <strong>Difficulty:</strong> Moderate — steep uphill sections, mostly clear footing<br>
+              <strong>Highlights:</strong> Panoramic views of Four Mile Beach and the Coral Sea. Mix of forested trail and open headlands.
+            </div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Flagstaff+Hill+Lookout+Port+Douglas" target="_blank">🗺️ Flagstaff Hill</a>
+          </div>
+        </li>
+        <li>
+          <div class="tl-icon activity">🪃</div>
+          <div class="tl-content">
+            <div class="tl-time">12:30 PM – 4:30 PM</div>
+            <div class="tl-title">Ngana Julaymba Dungay — Afternoon Cultural Tour</div>
+            <div class="tl-detail">
+              Booking #341472626 · walkaboutadventures.com.au<br>
+              Half-day Indigenous cultural experience
+            </div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Walkabout+Adventures+Port+Douglas" target="_blank">🗺️ Walkabout Adventures</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="alert alert-warning">
+        <strong>⚠️ Snake Safety — Port Douglas Hiking</strong>
+        <ul>
+          <li>Wear <strong>closed shoes + long socks/pants</strong> — poisonous snakes are present and aggressive</li>
+          <li>Stick to <strong>well-marked trails only</strong></li>
+          <li>Carry water, insect repellent, and sunscreen</li>
+          <li><strong>Avoid hiking at dawn/dusk</strong> — peak snake activity times</li>
+          <li>Check trail conditions at visitor centres or local park websites before heading out</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- April 16 — Daintree -->
-  <div class="day-card">
-    <div class="day-header forest">
-      <div class="day-num">16</div>
-      <div class="day-meta">
-        <div class="day-date">Wednesday, April 16</div>
-        <h2>Daintree Rainforest Day</h2>
-        <p>World's oldest tropical rainforest — 135 million years old</p>
+  <!-- ══════════════════════════════════════════════
+       APR 16 — DAINTREE RAINFOREST
+  ═══════════════════════════════════════════════ -->
+  <div class="section-label">Day 9</div>
+  <div class="card accent-green">
+    <div class="card-header">
+      <div class="day-badge">Apr 16 · Wed</div>
+      <div class="card-header-text">
+        <h2>🌿 Daintree Rainforest Day</h2>
+        <div class="location">📍 Daintree National Park — World's Oldest Tropical Rainforest</div>
       </div>
     </div>
-    <div class="day-body">
+    <div class="card-body">
+
+      <div class="alert alert-info">
+        <strong>🌏 UNESCO World Heritage Site</strong>
+        The Daintree is the world's oldest surviving tropical rainforest — over 135 million years old. Home to rare wildlife found nowhere else on Earth.
+      </div>
+
+      <div class="res-box">
+        <div class="res-title">🚤 Tour Operator Options</div>
+        <div class="res-row"><span class="res-label">Option A:</span> Tony's Tropical Tours</div>
+        <div class="res-row"><span class="res-label">Option B:</span> Back Country Bliss — River Drift Experience</div>
+        <div class="res-row"><span class="res-label">Note:</span> Confirm booking for one of these before Apr 16</div>
+      </div>
+
       <ul class="timeline">
         <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">7:00 AM</div>
+          <div class="tl-icon activity">🌿</div>
           <div class="tl-content">
-            <h4>Early departure — join a guided tour or self-drive</h4>
-            <div class="choice-grid" style="margin-top:10px;">
-              <div class="choice-card recommended">
-                <h5>Daintree Discovery Tours <span class="rec-badge">Option A</span></h5>
-                <p>Expert-guided full day with croc cruise, Cape Trib, and cultural interpretation.</p>
-                <a href="https://www.daintreediscoverytours.com.au" target="_blank" rel="noopener" style="font-size:.8rem; color:var(--reef);">daintreediscoverytours.com.au &rarr;</a>
-              </div>
-              <div class="choice-card">
-                <h5>Tony's Tropical Tours <span class="rec-badge" style="background:var(--gold);">Option B</span></h5>
-                <p>Personalised small-group tours into the Daintree with local knowledge.</p>
-                <a href="https://www.tropicaltours.com.au" target="_blank" rel="noopener" style="font-size:.8rem; color:var(--reef);">tropicaltours.com.au &rarr;</a>
-              </div>
+            <div class="tl-title">Mossman Gorge Rainforest Walk</div>
+            <div class="tl-detail">Crystal-clear gorge swimming hole · Indigenous cultural interpretation</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Mossman+Gorge+Queensland" target="_blank">🗺️ Mossman Gorge</a>
+          </div>
+        </li>
+        <li>
+          <div class="tl-icon activity">🐊</div>
+          <div class="tl-content">
+            <div class="tl-title">Daintree River Crocodile Cruise</div>
+            <div class="tl-detail">Spot saltwater crocodiles in their natural habitat along the river banks</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Daintree+River+Queensland" target="_blank">🗺️ Daintree River</a>
+          </div>
+        </li>
+        <li>
+          <div class="tl-icon activity">🏖️</div>
+          <div class="tl-content">
+            <div class="tl-title">Cape Tribulation Beach</div>
+            <div class="tl-detail">Where the rainforest meets the reef — one of Australia's most iconic vistas</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Cape+Tribulation+Beach+QLD" target="_blank">🗺️ Cape Tribulation</a>
+          </div>
+        </li>
+        <li>
+          <div class="tl-icon food">🍱</div>
+          <div class="tl-content">
+            <div class="tl-title">Tropical Lunch</div>
+            <div class="tl-detail">Included with tour</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="map-wrap">
+        <div class="map-label">🗺️ Daintree Rainforest Region — Port Douglas to Cape Tribulation</div>
+        <iframe
+          src="https://maps.google.com/maps?q=Daintree+Rainforest+Queensland+Australia&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <a class="map-btn" href="https://maps.google.com/?saddr=Port+Douglas+QLD&daddr=Cape+Tribulation+QLD" target="_blank">🗺️ Port Douglas → Cape Tribulation Route</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       APR 17 — FLY BACK TO SYDNEY
+  ═══════════════════════════════════════════════ -->
+  <div class="section-label">Day 10</div>
+  <div class="card">
+    <div class="card-header">
+      <div class="day-badge">Apr 17 · Thu</div>
+      <div class="card-header-text">
+        <h2>Return to Sydney</h2>
+        <div class="location">✈️ Cairns → Sydney · Optional: Skyrail Rainforest Cableway in Cairns</div>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="res-box" style="background: linear-gradient(135deg, #fff8e1, #fff3cd); border-color: #ffe082;">
+        <div class="res-title">⚠️ Optional Morning Activity — Skyrail Cableway</div>
+        <div class="res-row"><span class="res-label">Details:</span> If departing from Cairns area before the flight</div>
+        <div class="res-row"><span class="res-label">Website:</span> <a href="https://skyrail.com.au/visitor-information/faqs/" target="_blank" style="color:var(--ocean)">skyrail.com.au</a></div>
+        <div class="res-row"><span class="res-label">Note:</span> Check timing vs. your VA 1424 departure. Return car to Cairns Airport before flight.</div>
+      </div>
+
+      <div class="flight-card">
+        <div>
+          <div class="fc-airline">Virgin Australia</div>
+          <div class="fc-num">VA 1424</div>
+        </div>
+        <div class="fc-route">
+          <div class="fc-city"><div class="fc-code">CNS</div><div class="fc-time">Cairns</div></div>
+          <div class="fc-arrow">✈ ──────</div>
+          <div class="fc-city"><div class="fc-code">SYD</div><div class="fc-time">7:30 PM Arrive</div></div>
+        </div>
+        <div class="fc-meta">Return rental car at CNS Airport before flight</div>
+      </div>
+
+      <div class="stay-box">
+        <div class="stay-title">🏨 Kimpton Margot Sydney</div>
+        <div class="stay-detail">📍 Sydney CBD</div>
+        <div class="stay-detail">Arrive ~7:30 PM · Check in and rest</div>
+      </div>
+
+      <div class="map-wrap">
+        <div class="map-label">📍 Kimpton Margot Sydney</div>
+        <iframe
+          src="https://maps.google.com/maps?q=Kimpton+Margot+Sydney+Hotel&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <a class="map-btn" href="https://maps.google.com/?q=Kimpton+Margot+Sydney" target="_blank">🗺️ Kimpton Margot Sydney</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       APR 18 — SYDNEY ZOO DAY
+  ═══════════════════════════════════════════════ -->
+  <div class="section-label">Day 11</div>
+  <div class="card accent-teal">
+    <div class="card-header">
+      <div class="day-badge">Apr 18 · Sat</div>
+      <div class="card-header-text">
+        <h2>🦘 Taronga Zoo + The Rocks</h2>
+        <div class="location">📍 Sydney Harbour · Taronga Zoo + The Rocks</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ul class="timeline">
+        <li>
+          <div class="tl-icon ferry">⛴️</div>
+          <div class="tl-content">
+            <div class="tl-time">9:30 AM</div>
+            <div class="tl-title">Ferry to Taronga Zoo</div>
+            <div class="tl-detail">Depart Circular Quay · ~12 min scenic harbour ferry</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Circular+Quay+Ferry+Terminal+Sydney" target="_blank">🗺️ Circular Quay Ferry</a>
+          </div>
+        </li>
+        <li>
+          <div class="tl-icon activity">🦭</div>
+          <div class="tl-content">
+            <div class="tl-title">Taronga Zoo — Full Morning</div>
+            <div class="tl-detail">
+              🦭 Seal Show<br>
+              🐨 Koala Encounter Area<br>
+              🦘 Australian Walkabout<br>
+              🚡 Sky Safari Gondola (amazing harbour views)
             </div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Taronga+Zoo+Sydney" target="_blank">🗺️ Taronga Zoo</a>
           </div>
         </li>
         <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">Morning</div>
+          <div class="tl-icon ferry">⛴️</div>
           <div class="tl-content">
-            <h4>Mossman Gorge Rainforest Walk</h4>
-            <p>Ancient fan palms, suspension bridge over the Mossman River, and crystal swimming holes. Indigenous cultural interpretation with Kuku Yalanji traditional owners.</p>
+            <div class="tl-title">Return Ferry to Circular Quay</div>
           </div>
         </li>
         <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">Mid-morn</div>
+          <div class="tl-icon activity">🏛️</div>
           <div class="tl-content">
-            <h4>Daintree River Crocodile Cruise</h4>
-            <p>Spot massive saltwater crocodiles sunning on the river banks, plus kingfishers and rare birds.</p>
-            <a href="https://www.daintreerivercruises.com.au" target="_blank" rel="noopener">daintreerivercruises.com.au &rarr;</a>
+            <div class="tl-title">Explore The Rocks + Harbour Bridge Area</div>
+            <div class="tl-detail">Sydney's oldest neighbourhood · cobblestone laneways, galleries, pubs, weekend markets</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=The+Rocks+Sydney" target="_blank">🗺️ The Rocks</a>
+            <a class="map-btn outline" style="margin-top:8px;" href="https://maps.google.com/?q=Sydney+Harbour+Bridge" target="_blank">🗺️ Harbour Bridge</a>
           </div>
         </li>
         <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">Midday</div>
+          <div class="tl-icon food">🍽️</div>
           <div class="tl-content">
-            <h4>Cape Tribulation Beach</h4>
-            <p>The magical place where the Daintree Rainforest meets the Great Barrier Reef — one of the most iconic spots in Australia. Watch for cassowaries on the beach.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">Lunch</div>
-          <div class="tl-content">
-            <h4>Tropical lunch in the rainforest</h4>
-            <p>Boardwalk Cafe at Cape Tribulation or a picnic lunch if self-driving.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">Afternoon</div>
-          <div class="tl-content">
-            <h4>Daintree Discovery Centre Canopy Walk</h4>
-            <p>Aerial walkways up to 23 m high plus a 25 m tower with panoramic views over the canopy.</p>
-            <a href="https://www.daintree-rec.com.au" target="_blank" rel="noopener">daintree-rec.com.au &rarr;</a>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot gold"></div>
-          <div class="tl-time">Evening</div>
-          <div class="tl-content">
-            <h4>Farewell Port Douglas dinner</h4>
-            <p>Salsa Bar &amp; Grill or Watergate Restaurant for a memorable last night in tropical Queensland.</p>
+            <div class="tl-time">7:00 PM</div>
+            <div class="tl-title">Dinner — Hustler Sydney</div>
+            <div class="tl-detail">⚠️ Cancellation fee applies — confirm reservation before 7 PM</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Hustler+Sydney+Restaurant" target="_blank">🗺️ Hustler Sydney</a>
           </div>
         </li>
       </ul>
 
-      <div class="map-label" style="margin-top:20px;">Port Douglas, Mossman Gorge &amp; Daintree Region</div>
-      <div class="map-wrap" style="margin-bottom:0;">
+      <div class="map-wrap">
+        <div class="map-label">📍 Sydney Harbour — Zoo, The Rocks &amp; Circular Quay</div>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d119565.4!2d145.4646!3d-16.4855!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6982b0e1e98bcad7%3A0xa984b3b38fc14da8!2sPort%20Douglas%20QLD%204877%2C%20Australia!5e0!3m2!1sen!2sau!4v1710000000000!5m2!1sen!2sau"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Port Douglas & Daintree Region Map">
+          src="https://maps.google.com/maps?q=Taronga+Zoo+Sydney+NSW&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
     </div>
   </div>
 
-  <!-- ════════════════════════════════════
-       PHASE 4 — SYDNEY RETURN
-  ════════════════════════════════════ -->
-  <div class="phase-header">
-    <div class="phase-icon">🎭</div>
-    <div class="phase-title sydney">Sydney — Return Leg</div>
-    <div class="phase-divider"></div>
-  </div>
-
-  <div class="info-card">
-    <div class="ic-icon">🏨</div>
-    <div>
-      <h4>Stay: Kimpton Margot Sydney</h4>
-      <p>Luxury boutique hotel in the Sydney CBD — ideal base for the Opera House, Harbour Bridge, and Taronga Zoo.</p>
-      <a href="https://www.kimptonmargot.com.au" target="_blank" rel="noopener">kimptonmargot.com.au &rarr;</a>
-    </div>
-  </div>
-
-  <!-- April 17 — Fly back to Sydney -->
-  <div class="day-card">
-    <div class="day-header flyout">
-      <div class="day-num">17</div>
-      <div class="day-meta">
-        <div class="day-date">Thursday, April 17</div>
-        <h2>Fly Cairns → Sydney</h2>
-        <p>Return to the Harbour City</p>
+  <!-- ══════════════════════════════════════════════
+       APR 19 — OPERA HOUSE + DEPARTURE
+  ═══════════════════════════════════════════════ -->
+  <div class="section-label">Day 12</div>
+  <div class="card accent-blue">
+    <div class="card-header">
+      <div class="day-badge">Apr 19 · Sun</div>
+      <div class="card-header-text">
+        <h2>🎭 Sydney Opera House + Departure</h2>
+        <div class="location">📍 Sydney CBD · Departs 8:55 PM</div>
       </div>
     </div>
-    <div class="day-body">
+    <div class="card-body">
       <ul class="timeline">
         <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">Morning</div>
+          <div class="tl-icon activity">🎭</div>
           <div class="tl-content">
-            <h4>Check out Coconut Grove — return rental car to Cairns Airport</h4>
-            <p>Allow 1 hour drive + time to return the Avis SUV before your flight.</p>
+            <div class="tl-title">Sydney Opera House — Guided Tour</div>
+            <div class="tl-detail">Book guided tours at sydneyoperahouse.com · Explore the iconic shells up close</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Sydney+Opera+House" target="_blank">🗺️ Opera House</a>
           </div>
         </li>
         <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">Midday</div>
+          <div class="tl-icon activity">🌿</div>
           <div class="tl-content">
-            <h4>Depart Cairns — Virgin Australia VA1424</h4>
-            <p>Arrives Sydney 7:30 PM</p>
-            <span class="tl-tag confirm">VA 1424</span>
+            <div class="tl-title">Walk Through Royal Botanic Garden</div>
+            <div class="tl-detail">Free entry · Stunning harbour views · Ancient fig trees</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Royal+Botanic+Garden+Sydney" target="_blank">🗺️ Royal Botanic Garden</a>
           </div>
         </li>
         <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">7:30 PM</div>
+          <div class="tl-icon activity">🏛️</div>
           <div class="tl-content">
-            <h4>Arrive Sydney — check in Kimpton Margot</h4>
-            <p>CBD location — walk to dinner or order in. Rest up for the zoo tomorrow.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- April 18 — Taronga Zoo -->
-  <div class="day-card">
-    <div class="day-header zoo">
-      <div class="day-num">18</div>
-      <div class="day-meta">
-        <div class="day-date">Friday, April 18</div>
-        <h2>Taronga Zoo Day</h2>
-        <p>Ferry across Sydney Harbour + iconic wildlife</p>
-      </div>
-    </div>
-    <div class="day-body">
-      <ul class="timeline">
-        <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">9:30 AM</div>
-          <div class="tl-content">
-            <h4>Ferry to Taronga Zoo (Circular Quay)</h4>
-            <p>Catch the ferry from Circular Quay — 12-minute scenic ride across Sydney Harbour with Opera House and Bridge views.</p>
-            <a href="https://taronga.org.au/taronga-zoo-sydney" target="_blank" rel="noopener">taronga.org.au &rarr;</a>
+            <div class="tl-title">Harbour Bridge Pylon Lookout</div>
+            <div class="tl-detail">Climb the south-east pylon for 360° views of Sydney Harbour</div>
+            <a class="map-btn" style="margin-top:8px;" href="https://maps.google.com/?q=Sydney+Harbour+Bridge+Pylon+Lookout" target="_blank">🗺️ Pylon Lookout</a>
           </div>
         </li>
         <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">Morning</div>
+          <div class="tl-icon flight">✈️</div>
           <div class="tl-content">
-            <h4>Zoo Highlights</h4>
-            <p>🦭 Seal Show &bull; 🐨 Koala Encounter Area &bull; 🦘 Australian Walkabout — kangaroos, wallabies, emus up close</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot"></div>
-          <div class="tl-time">Afternoon</div>
-          <div class="tl-content">
-            <h4>Sky Safari Gondola</h4>
-            <p>Ride the cable cars over the zoo with sweeping views of Sydney Harbour — a highlight for kids.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">Late arvo</div>
-          <div class="tl-content">
-            <h4>Return ferry → Explore The Rocks &amp; Harbour Bridge</h4>
-            <p>Walk under the Harbour Bridge, explore The Rocks historic precinct and browse the markets.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">Evening</div>
-          <div class="tl-content">
-            <h4>Dinner options</h4>
-            <p><strong>Bennelong</strong> — Peter Gilmore's iconic restaurant inside the Sydney Opera House sails (book well ahead) &bull; <strong>The Apollo</strong> (Surry Hills) — superb modern Greek, reservation recommended</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- April 19 — Opera House + Departure -->
-  <div class="day-card">
-    <div class="day-header opera">
-      <div class="day-num">19</div>
-      <div class="day-meta">
-        <div class="day-date">Saturday, April 19</div>
-        <h2>Sydney Opera House + Departure</h2>
-        <p>Farewell Australia — homeward bound</p>
-      </div>
-    </div>
-    <div class="day-body">
-      <ul class="timeline">
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">Morning</div>
-          <div class="tl-content">
-            <h4>Sydney Opera House Guided Tour</h4>
-            <p>Step inside one of the world's most recognizable buildings. Behind-the-scenes tour of the concert halls and backstage areas. Book in advance.</p>
-            <a href="https://www.sydneyoperahouse.com/visit/tours" target="_blank" rel="noopener">sydneyoperahouse.com/visit/tours &rarr;</a>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">Midday</div>
-          <div class="tl-content">
-            <h4>Walk through the Royal Botanic Garden</h4>
-            <p>A stunning 30-hectare garden on the harbour's edge — free to enter, beautiful family stroll.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">Afternoon</div>
-          <div class="tl-content">
-            <h4>Harbour Bridge Pylon Lookout</h4>
-            <p>Climb inside the south-east pylon for 360° views over the harbour, city, and ocean. Great for kids.</p>
-            <a href="https://www.pylonlookout.com.au" target="_blank" rel="noopener">pylonlookout.com.au &rarr;</a>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">~5:30 PM</div>
-          <div class="tl-content">
-            <h4>Head to Sydney Airport</h4>
-            <p>Allow plenty of time for international check-in and security. Farewell dinner at the airport or grab a bite before you go.</p>
-          </div>
-        </li>
-        <li>
-          <div class="tl-dot sydney"></div>
-          <div class="tl-time">8:55 PM</div>
-          <div class="tl-content">
-            <h4>Depart Sydney (SYD) — Alaska Airlines 8014</h4>
-            <p>Homeward bound. What an adventure! ✈️</p>
-            <span class="tl-tag confirm">AS 8014</span>
+            <div class="tl-time">8:55 PM</div>
+            <div class="tl-title">Depart Sydney — Alaska Airlines AS 8014</div>
+            <div class="tl-detail">Head to airport 3–3.5 hrs before departure (~5:30 PM) · Allow time for international check-in</div>
           </div>
         </li>
       </ul>
 
-      <div class="map-label" style="margin-top:20px;">Sydney Harbour — Opera House, Botanic Garden &amp; Harbour Bridge</div>
-      <div class="map-wrap" style="margin-bottom:0;">
+      <div class="alert alert-coral">
+        <strong>🛫 Departure Day Tips</strong>
+        <ul>
+          <li>Check out of Kimpton Margot before morning activities (store bags with concierge)</li>
+          <li>Sydney International Airport (T1) — allow 3+ hours for international departure</li>
+          <li>Duty-free shopping available airside</li>
+          <li>Declare any food/biosecurity items before arrival back in the US</li>
+        </ul>
+      </div>
+
+      <div class="map-wrap">
+        <div class="map-label">📍 Sydney Opera House &amp; Harbour Precinct</div>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13249!2d151.2139!3d-33.8568!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae3c4985e13f%3A0x500f5be02b75b100!2sSydney%20Opera%20House!5e0!3m2!1sen!2sau!4v1710000000002!5m2!1sen!2sau"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Sydney Harbour Map">
+          src="https://maps.google.com/maps?q=Sydney+Opera+House+NSW&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
+      <a class="map-btn" href="https://maps.google.com/?q=Sydney+Opera+House" target="_blank">🗺️ Opera House</a>
+      <a class="map-btn outline" href="https://maps.google.com/?q=Royal+Botanic+Garden+Sydney" target="_blank">🌿 Botanic Garden</a>
+      <a class="map-btn outline" href="https://maps.google.com/?q=Sydney+Airport+International+Terminal" target="_blank">✈️ SYD Airport</a>
     </div>
   </div>
 
-  <!-- ════ ALL FLIGHTS SUMMARY ════ -->
-  <h2 class="section-title">All Flights at a Glance</h2>
-
-  <div class="flight-card">
-    <div class="flight-logo">✈️</div>
-    <div class="flight-info">
-      <div class="airline">Alaska Airlines · AS 8027</div>
-      <div class="route">Seattle (SEA) → Honolulu (HNL)</div>
-      <div class="times">April 8 &bull; Depart 5:55 PM → Arrive 9:13 PM</div>
+  <!-- ══════════════════════════════════════════════
+       QUICK REFERENCE
+  ═══════════════════════════════════════════════ -->
+  <div class="section-label">Quick Reference — All Bookings</div>
+  <div class="card">
+    <div class="card-body">
+      <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
+        <thead>
+          <tr style="background:#f0f4f8; text-align:left;">
+            <th style="padding:10px 12px; border-bottom:2px solid var(--border);">Date</th>
+            <th style="padding:10px 12px; border-bottom:2px solid var(--border);">Booking</th>
+            <th style="padding:10px 12px; border-bottom:2px solid var(--border);">Confirmation / Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 8</td>
+            <td style="padding:10px 12px; font-weight:600;">✈️ AS 8027 SEA→HNL</td>
+            <td style="padding:10px 12px;">5:55 PM → 9:13 PM</td>
+          </tr>
+          <tr style="background:#fafafa; border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 8–9</td>
+            <td style="padding:10px 12px; font-weight:600;">🏨 AC Hotel Honolulu</td>
+            <td style="padding:10px 12px;">2 connecting rooms · ~5 mi from HNL</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 9</td>
+            <td style="padding:10px 12px; font-weight:600;">✈️ AS 8451 HNL→SYD</td>
+            <td style="padding:10px 12px;">11:50 AM → 6:50 PM (+1 day)</td>
+          </tr>
+          <tr style="background:#fafafa; border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 10–12</td>
+            <td style="padding:10px 12px; font-weight:600;">🏠 Airbnb Bondi Beach</td>
+            <td style="padding:10px 12px;">Unit 3 / 80 Campbell Parade, Bondi Beach NSW 2026</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 11</td>
+            <td style="padding:10px 12px; font-weight:600;">🍽️ Icebergs Bistro / Makaveli</td>
+            <td style="padding:10px 12px;">7:00 PM reservation</td>
+          </tr>
+          <tr style="background:#fafafa; border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 12</td>
+            <td style="padding:10px 12px; font-weight:600;">✈️ VA 1419 SYD→CNS</td>
+            <td style="padding:10px 12px;">12:40 PM Terminal 2 → 3:55 PM Cairns</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 12</td>
+            <td style="padding:10px 12px; font-weight:600;">🚗 Avis Rental Car</td>
+            <td style="padding:10px 12px;">Confirmation: <strong>09201279US3</strong> · Intermediate SUV</td>
+          </tr>
+          <tr style="background:#fafafa; border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 12–17</td>
+            <td style="padding:10px 12px; font-weight:600;">🌴 Coconut Grove Port Douglas</td>
+            <td style="padding:10px 12px;">Reservation: <strong>#5609</strong> · 2 Bedroom</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 12</td>
+            <td style="padding:10px 12px; font-weight:600;">🍽️ Bam Pow</td>
+            <td style="padding:10px 12px;">7:30 PM · Port Douglas</td>
+          </tr>
+          <tr style="background:#fafafa; border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 13</td>
+            <td style="padding:10px 12px; font-weight:600;">🐨 Wildlife Habitat</td>
+            <td style="padding:10px 12px;">Ref: <strong>#16866285</strong> · 10:30 AM · Koala photo</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 13</td>
+            <td style="padding:10px 12px; font-weight:600;">🍽️ Salsa Bar &amp; Grill</td>
+            <td style="padding:10px 12px;">7:00 PM · Deposit $50 paid</td>
+          </tr>
+          <tr style="background:#fafafa; border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 14</td>
+            <td style="padding:10px 12px; font-weight:600;">🤿 Wavelength Reef Tour</td>
+            <td style="padding:10px 12px;">8:10 AM check-in · Berth C10/C11 · 4 guests</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 15</td>
+            <td style="padding:10px 12px; font-weight:600;">🪃 Ngana Julaymba Dungay</td>
+            <td style="padding:10px 12px;">Booking: <strong>#341472626</strong> · 12:30–4:30 PM</td>
+          </tr>
+          <tr style="background:#fafafa; border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 17</td>
+            <td style="padding:10px 12px; font-weight:600;">✈️ VA 1424 CNS→SYD</td>
+            <td style="padding:10px 12px;">Arrive 7:30 PM · Return Avis car at CNS before flight</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 17–19</td>
+            <td style="padding:10px 12px; font-weight:600;">🏨 Kimpton Margot Sydney</td>
+            <td style="padding:10px 12px;">Sydney CBD</td>
+          </tr>
+          <tr style="background:#fafafa; border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 18</td>
+            <td style="padding:10px 12px; font-weight:600;">🍽️ Hustler Sydney</td>
+            <td style="padding:10px 12px;">7:00 PM · ⚠️ Cancellation fee applies</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px; white-space:nowrap; color:var(--gray);">Apr 19</td>
+            <td style="padding:10px 12px; font-weight:600;">✈️ AS 8014 SYD→SEA</td>
+            <td style="padding:10px 12px;">Departs 8:55 PM · Arrive at airport by ~5:30 PM</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="flight-chip">Leg 1</div>
   </div>
 
-  <div class="flight-card">
-    <div class="flight-logo">✈️</div>
-    <div class="flight-info">
-      <div class="airline">Alaska Airlines · AS 8451</div>
-      <div class="route">Honolulu (HNL) → Sydney (SYD)</div>
-      <div class="times">April 9 &bull; Depart 11:50 AM → Arrive April 10, 6:50 PM</div>
-    </div>
-    <div class="flight-chip">Leg 2</div>
-  </div>
-
-  <div class="flight-card">
-    <div class="flight-logo">✈️</div>
-    <div class="flight-info">
-      <div class="airline">Virgin Australia · VA 1419</div>
-      <div class="route">Sydney (SYD) T2 → Cairns (CNS)</div>
-      <div class="times">April 12 &bull; Depart 12:40 PM → Arrive 3:55 PM</div>
-    </div>
-    <div class="flight-chip">Leg 3</div>
-  </div>
-
-  <div class="flight-card">
-    <div class="flight-logo">✈️</div>
-    <div class="flight-info">
-      <div class="airline">Virgin Australia · VA 1424</div>
-      <div class="route">Cairns (CNS) → Sydney (SYD)</div>
-      <div class="times">April 17 &bull; Arrives Sydney 7:30 PM</div>
-    </div>
-    <div class="flight-chip">Leg 4</div>
-  </div>
-
-  <div class="flight-card">
-    <div class="flight-logo">✈️</div>
-    <div class="flight-info">
-      <div class="airline">Alaska Airlines · AS 8014</div>
-      <div class="route">Sydney (SYD) → Seattle (SEA)</div>
-      <div class="times">April 19 &bull; Depart 8:55 PM</div>
-    </div>
-    <div class="flight-chip">Leg 5 — Home</div>
-  </div>
-
-  <!-- ════ KEY BOOKINGS ════ -->
-  <h2 class="section-title">Key Bookings &amp; Confirmations</h2>
-  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:14px; margin-bottom:40px;">
-    <div class="info-card">
-      <div class="ic-icon">🏨</div>
-      <div>
-        <h4>AC Hotel Honolulu</h4>
-        <p>April 8 night — 5 mi from HNL. 2 connecting rooms.</p>
+  <!-- IMPORTANT NOTES -->
+  <div class="section-label">Important Notes &amp; Reminders</div>
+  <div class="card">
+    <div class="card-body">
+      <div class="alert alert-warning" style="margin-top:0;">
+        <strong>📋 To Confirm / Add Before Departure</strong>
+        <ul>
+          <li>Travel visas for Australia — ensure ETA (Electronic Travel Authority) applied for all travelers</li>
+          <li>Passport details — confirm all passports valid 6+ months beyond Apr 19, 2026</li>
+          <li>Daintree tour booking (Apr 16) — confirm with Tony's Tropical OR Back Country Bliss</li>
+          <li>Babel Port Douglas dinner reservation (Apr 14)</li>
+          <li>Sydney Opera House guided tour booking</li>
+          <li>Taronga Zoo tickets (can buy online in advance)</li>
+          <li>Travel insurance for all 4 travelers</li>
+          <li>Notify bank of international travel</li>
+        </ul>
+      </div>
+      <div class="alert alert-info" style="margin-bottom:0;">
+        <strong>💡 Australia Travel Tips</strong>
+        <ul>
+          <li><strong>Power adapters:</strong> Australia uses Type I plugs — bring an adapter</li>
+          <li><strong>Currency:</strong> Australian Dollar (AUD). Most places accept cards; carry some cash for markets/small vendors</li>
+          <li><strong>Tipping:</strong> Not expected in Australia, but appreciated for exceptional service</li>
+          <li><strong>Sun protection:</strong> UV index is extreme — SPF 50+ sunscreen, hats, and rashguards essential</li>
+          <li><strong>Reef-safe sunscreen:</strong> Required on the Great Barrier Reef</li>
+          <li><strong>Water safety:</strong> Swim only between the flags at patrolled beaches</li>
+          <li><strong>Emergency:</strong> 000 (Australian emergency number)</li>
+          <li><strong>Time zones:</strong> Queensland (Cairns/Port Douglas) = UTC+10 · Sydney (AEST) = UTC+10 (no DST in April)</li>
+        </ul>
       </div>
     </div>
-    <div class="info-card">
-      <div class="ic-icon">🏠</div>
-      <div>
-        <h4>Airbnb — Bondi Beach</h4>
-        <p>Unit 3 / 80 Campbell Parade, Bondi Beach NSW 2026</p>
-        <p>April 10–12</p>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="ic-icon">🌴</div>
-      <div>
-        <h4>Coconut Grove — Port Douglas</h4>
-        <p>2 Bedroom apartment. April 12–17.</p>
-        <span class="conf">Reservation #5609</span>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="ic-icon">🏨</div>
-      <div>
-        <h4>Kimpton Margot Sydney</h4>
-        <p>April 17–19. Sydney CBD.</p>
-        <a href="https://www.kimptonmargot.com.au" target="_blank" rel="noopener">kimptonmargot.com.au &rarr;</a>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="ic-icon">🚗</div>
-      <div>
-        <h4>Avis Rental Car — Cairns Airport</h4>
-        <p>Intermediate SUV. April 12–17.</p>
-        <span class="conf">09201279US3</span>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="ic-icon">🐨</div>
-      <div>
-        <h4>Wildlife Habitat Port Douglas</h4>
-        <p>April 13, 10:30 AM. Koala photo included.</p>
-        <span class="conf">Ref: 16866285</span>
-      </div>
-    </div>
   </div>
 
-  <!-- ════ TOUR OPERATORS ════ -->
-  <h2 class="section-title">Tour Operators &amp; Booking Links</h2>
-  <div class="operators">
-    <div class="op-card">
-      <h4>Wavelength Reef Cruises</h4>
-      <p>Suggested reef operator — small-group with marine biologist. $763 family.</p>
-      <a href="https://www.wavelength.com.au" target="_blank" rel="noopener">wavelength.com.au &rarr;</a>
-    </div>
-    <div class="op-card">
-      <h4>Calypso Reef Cruises</h4>
-      <p>Larger vessel reef day trip. $877 family.</p>
-      <a href="https://www.calypsoreef.com.au" target="_blank" rel="noopener">calypsoreef.com.au &rarr;</a>
-    </div>
-    <div class="op-card">
-      <h4>Wildlife Habitat</h4>
-      <p>Koala photos, cassowaries, crocs. 10:30 AM April 13. Ref: 16866285.</p>
-      <a href="https://www.wildlifehabitat.com.au" target="_blank" rel="noopener">wildlifehabitat.com.au &rarr;</a>
-    </div>
-    <div class="op-card">
-      <h4>Mossman Gorge Centre</h4>
-      <p>Ngadiku Dreamtime Walk with Kuku Yalanji traditional owners.</p>
-      <a href="https://www.mossmangorge.com.au" target="_blank" rel="noopener">mossmangorge.com.au &rarr;</a>
-    </div>
-    <div class="op-card">
-      <h4>Daintree Discovery Centre</h4>
-      <p>Canopy walkways and 25 m tower in the world's oldest rainforest.</p>
-      <a href="https://www.daintree-rec.com.au" target="_blank" rel="noopener">daintree-rec.com.au &rarr;</a>
-    </div>
-    <div class="op-card">
-      <h4>Daintree River Cruises</h4>
-      <p>Crocodile &amp; wildlife boat cruise on the Daintree River.</p>
-      <a href="https://www.daintreerivercruises.com.au" target="_blank" rel="noopener">daintreerivercruises.com.au &rarr;</a>
-    </div>
-    <div class="op-card">
-      <h4>Taronga Zoo Sydney</h4>
-      <p>Ferry access from Circular Quay. Seal show, koalas, Sky Safari gondola.</p>
-      <a href="https://taronga.org.au" target="_blank" rel="noopener">taronga.org.au &rarr;</a>
-    </div>
-    <div class="op-card">
-      <h4>Sydney Opera House Tours</h4>
-      <p>Guided tours of this UNESCO icon — book in advance for April 19.</p>
-      <a href="https://www.sydneyoperahouse.com/visit/tours" target="_blank" rel="noopener">sydneyoperahouse.com &rarr;</a>
-    </div>
-  </div>
-
-</div><!-- /container -->
 </div>
 
-<footer>
-  🇦🇺 Stavrou Family &bull; Australia April 8–19, 2025 &bull; Itinerary prepared March 2026 &bull; Always verify operator schedules and book direct
-</footer>
+<div class="footer">
+  🇦🇺 Stavrou Family Australia Trip · April 8–19, 2026 · Have an amazing adventure!
+</div>
 
 </body>
 </html>
